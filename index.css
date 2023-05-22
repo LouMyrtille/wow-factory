@@ -1,0 +1,493 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#main video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#navbar {
+
+    overflow: hidden;
+    transition: background-color 0.8s ease;
+    margin: 0;
+    z-index: 1;
+}
+
+#navbar.scrolled {
+    background-color: rgba(51, 51, 51, 255);
+    height: 11%;
+    margin: 0;
+}
+
+#navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 5px;
+    margin: 35px 17px;
+    text-decoration: none;
+    font-family: 'Wix Madefor Display', sans-serif;
+}
+
+.navbar-right {
+    float: right;
+}
+
+button {
+    font-size: 18px;
+    padding: 12px 40px;
+    margin: 23px;
+    border-radius: 25px;
+    font-family: 'Wix Madefor Display', sans-serif;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    transition: background-position 0.4s ease-out, color 0.4s ease-out;
+    background: linear-gradient(to right, white 50%, black 50%);
+    background-size: 200% 100%;
+    background-position: 0% 0;
+
+}
+
+button:hover {
+    background-position: -100% 0;
+    color: white;
+}
+
+.logo {
+    width: 110px;
+    height: 75px;
+    padding-top: 12px;
+    position: absolute;
+    left: 46%;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.text {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-size: 100px;
+    font-family: 'Cormorant', serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    line-height: 1;
+}
+
+p {
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Wix Madefor Display', sans-serif;
+    font-weight: 500;
+}
+
+.font {
+    font-family: 'Wix Madefor Display', sans-serif;
+    font-size: 90px;
+}
+
+@keyframes bounce {
+
+    0%,
+    25%,
+    50%,
+    75%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+img.finger {
+    position: absolute;
+    bottom: 40px;
+    width: 40px;
+    animation: bounce 2s infinite;
+}
+
+#navbar.navbar-right a:after {
+    display: block;
+    content: '';
+    border-bottom: white solid 3px;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+#navbar.navbar-right a:hover:after {
+    transform: scaleX(1);
+}
+
+#navbar.navbar-right a:after {
+    transform-origin: 0% 50%;
+}
+
+#navbar.navbar-right a:hover {
+    opacity: 0.6;
+}
+
+#navbar.navbar-right a:active {
+    font-family: 'Cormorant', serif;
+}
+
+img.hamburger {
+    display: none;
+    float: right;
+    margin: 20px;
+    width: 50px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1200px) {
+    img.hamburger {
+        display: block;
+    }
+
+    #navbar.navbar-right {
+        display: flex;
+        flex-direction: column;
+        background-color: #4c4c4c;
+        width: 100%;
+        height: 100vh;
+        padding-top: 20%;
+        font-size: 30px;
+        line-height: 0.1;
+        position: relative;
+        top: 0;
+        left: -100%;
+        transition: left 0.3s ease-in-out;
+    }
+
+    #navbar.navbar-right a:hover {
+        opacity: 0.6;
+        border-bottom: none;
+    }
+
+    #navbar.navbar-right.mobile-menu {
+        left: 0;
+    }
+
+}
+
+#slide {
+    display: flex;
+    height: 800px;
+    overflow: hidden;
+}
+
+#slide>div {
+    width: 100%;
+    height: 100%;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#slide>div:first-of-type {
+    background-image: url("bounce.png");
+    background-size: cover;
+
+}
+
+#slide>div:nth-of-type(2) {
+    background-image: url("hotel.png");
+    background-size: cover;
+
+}
+
+#slide>div:nth-of-type(3) {
+    background-image: url("plane.png");
+    background-size: cover;
+
+}
+
+#slide>div:nth-of-type(4) {
+    background-image: url("football.png");
+    background-size: cover;
+
+}
+
+#slide {
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    0% {
+        margin-left: 0%;
+    }
+
+    33% {
+        margin-left: -10%;
+    }
+
+    50% {
+        margin-left: -20%;
+    }
+
+    66% {
+        margin-left: -40%;
+    }
+
+    100% {
+        margin-left: -80%;
+    }
+}
+
+
+div>h2 {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 150px 0;
+    font-size: 80px;
+    font-family: 'Cormorant', serif;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+div:hover>h2 {
+    opacity: 1;
+}
+
+.slide1,
+.slide2,
+.slide3,
+.slide4 {
+    transition: filter 0.3s ease;
+}
+
+.slide1:hover,
+.slide2:hover,
+.slide3:hover,
+.slide4:hover {
+    filter: brightness(50%);
+
+}
+
+
+#part3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+img.screen {
+    width: auto;
+    height: 970px;
+}
+
+img.tophat {
+    position: absolute;
+    display: flex;
+    height: 30%;
+    opacity: 0.2;
+    margin-top: -206px;
+    margin-left: 104px;
+}
+
+
+h3.flair {
+    position: absolute;
+    font-size: 80px;
+    font-family: Cormorant, serif;
+    text-align: center;
+    line-height: 1;
+    margin-top: -146px;
+    margin-left: 150px;
+}
+
+h3.elegance {
+    position: absolute;
+    font-size: 80px;
+    font-family: Cormorant, serif;
+    text-align: center;
+    line-height: 1;
+    margin-top: -8px;
+    margin-left: 150px;
+}
+
+img.tophat {
+    animation: rotate 5s linear infinite;
+}
+
+
+@keyframes rotate {
+
+    0% {
+        transform: rotate(0deg) translateX(20px) rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg) translateX(20px) rotate(-360deg);
+    }
+}
+
+p.special {
+    font-size: 17px;
+    color: rgb(119, 118, 118);
+    text-align: left;
+    margin: 134px 79px 0;
+}
+
+button.outfit {
+    display: flex;
+    position: absolute;
+    margin-left: 512px;
+    margin-top: 48px;
+    border: solid black;
+}
+
+/* Part 4 of the webpage */
+
+.flex {
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #191919;
+}
+
+
+.flex h1 {
+    color: white;
+    font-size: 60px;
+    padding-top: 50px;
+    padding-bottom: 5px;
+
+}
+
+.flex button {
+    background-color: black;
+    color: white;
+    transition: background-position 0.4s ease-out, color 0.4s ease-out;
+    background: linear-gradient(to right, black 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: 0% 0;
+    margin-top: 71px;
+    border: solid white;
+}
+
+.flex button:hover {
+    background-position: -100% 0;
+    color: black;
+}
+
+.flexbox-container {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    background-color: #191919;
+
+
+}
+
+.flexbox-item {
+
+    font-size: 17px;
+    color: white;
+    font-family: 'Wix Madefor Display', sans-serif;
+
+    margin: 30px 60px;
+}
+
+.flexbox-item1 {
+    min-height: 100px;
+
+
+}
+
+.flexbox-item2 {
+    min-height: 100px;
+
+}
+
+.flexbox-item3 {
+    min-height: 100px;
+
+}
+
+.cacadoie {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    justify-content: space-around;
+    background-color: #364a28;
+}
+
+.cacadoie h1 {
+    color: white;
+    font-size: 60px;
+}
+
+.textmiddle {
+    width: 30%;
+    font-size: 17px;
+    color: white;
+    font-family: 'Wix Madefor Display', sans-serif;
+    padding: 80px;
+}
+
+.links-end {
+    display: flex;
+    justify-content: center;
+}
+
+.links-end a {
+    color: black;
+    padding: 5px;
+    margin: 35px 17px;
+    text-decoration: none;
+    font-family: 'Wix Madefor Display', sans-serif;
+}
+
+.links-end a::after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px black;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+.links-end a:hover:after {
+    transform: scaleX(1);
+}
+
+.links-end a:after {
+    transform-origin: 0% 50%;
+}
